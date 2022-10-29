@@ -1,6 +1,6 @@
 import sys
-sys.path.insert(0, '../..')
-from utils import readline
+sys.path.insert(0, '../../utils')
+from utils.reader import readline
 
 instructions: str = readline('./01.txt')
 

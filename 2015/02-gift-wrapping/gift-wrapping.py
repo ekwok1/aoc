@@ -1,6 +1,7 @@
 import sys
-sys.path.insert(0, '../..')
-from utils import readlines, two_min
+sys.path.insert(0, '../../utils')
+from utils.reader import readlines
+from utils.math import two_min
 
 gifts: "list[str]" = readlines('./02.txt')
 
