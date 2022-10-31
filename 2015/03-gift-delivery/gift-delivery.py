@@ -1,24 +1,25 @@
 import sys
 sys.path.insert(0, '../..')
 from utils.reader import readline
-from utils.grid import Grid, Location
+from utils.grid import Grid
+from utils.coordinate import Coordinate
 
 instructions: str = readline('./03.txt')
 
-grid: Grid = Grid(set())
-location: Location = Location()
-grid.visit(location)
+grid: Grid[Coordinate] = Grid()
+coordinate: Coordinate = Coordinate()
+grid.visit(coordinate)
 
 for instruction in instructions:
   if instruction == '^':
-    location = location.moveUp()
+    coordinate = coordinate.moveUp()
   elif instruction == '>':
-    location = location.moveRight()
+    coordinate = coordinate.moveRight()
   elif instruction == 'v':
-    location = location.moveDown()
+    coordinate = coordinate.moveDown()
   elif instruction == '<':
-    location = location.moveLeft()
+    coordinate = coordinate.moveLeft()
   
-  grid.visit(location)
+  grid.visit(coordinate)
 
-print(grid.count)
+print(grid.size())

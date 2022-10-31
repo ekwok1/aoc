@@ -1,34 +1,18 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import Generic, TypeVar
+
+T = TypeVar('T')
 
 @dataclass
-class Grid:
-  visited: "set[Location]"
-  count: int = 0
+class Grid(Generic[T]):
+  _visited: "set[T]" = field(default_factory=set)
 
-  def hasVisited(self, location: "Location") -> bool:
-    return location in self.visited
+  def size(self) -> int:
+    return len(self._visited)
 
-  def visit(self, location: "Location") -> None:
-    if not self.hasVisited(location):
-      self.count += 1
-      self.visited.add(location)
-
-@dataclass
-class Location:
-  x: int = 0
-  y: int = 0
-
-  def moveRight(self) -> "Location":
-    return Location(self.x + 1, self.y)
-
-  def moveDown(self) -> "Location":
-    return Location(self.x, self.y - 1)
-
-  def moveLeft(self) -> "Location":
-    return Location(self.x - 1, self.y)
-
-  def moveUp(self) -> "Location":
-    return Location(self.x, self.y + 1)
-
-  def __hash__(self) -> int:
-    return hash((self.x, self.y))
+  def visited(self, obj: T) -> bool:
+    return obj in self._visited
+  
+  def visit(self, obj: T) -> None:
+    if not self.visited(obj):
+      self._visited.add(obj)
