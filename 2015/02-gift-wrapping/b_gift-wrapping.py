@@ -1,9 +1,9 @@
 import sys
 sys.path.insert(0, '../../utils')
-from utils.reader import readlines
+from utils.reader import read_lines
 from utils.math import two_min
 
-gifts: "list[str]" = readlines('./02.txt')
+gifts: "list[str]" = read_lines('./02.txt')
 
 ribbon: int = 0
 for gift in gifts:

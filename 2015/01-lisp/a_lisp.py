@@ -1,8 +1,8 @@
 import sys
 sys.path.insert(0, '../../utils')
-from utils.reader import readline
+from utils.reader import read_line
 
-instructions: str = readline('./01.txt')
+instructions: str = read_line('./01.txt')
 
 floor: int = 0
 for instruction in instructions:

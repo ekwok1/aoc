@@ -1,10 +1,10 @@
 import sys
 sys.path.insert(0, '../..')
-from utils.reader import readline
+from utils.reader import read_line
 from utils.grid import Grid
 from utils.coordinate import Coordinate
 
-instructions: str = readline('./03.txt')
+instructions: str = read_line('./03.txt')
 
 grid: Grid[Coordinate] = Grid()
 coordinate: Coordinate = Coordinate()
