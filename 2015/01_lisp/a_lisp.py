@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '../../utils')
+sys.path.insert(0, '../..')
 from utils.reader import read_line
 
 instructions: str = read_line('./01.txt')
