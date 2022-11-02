@@ -25,7 +25,7 @@ def has_three_vowels(string: str) -> bool:
 
 def has_repeated_char(string: str) -> bool:
   for index, char in enumerate(string):
-    if index != len(string)-1 and char == string[index + 1]:
+    if index < len(string) - 1 and char == string[index + 1]:
       return True
 
   return False
