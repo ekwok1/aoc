@@ -1,7 +1,7 @@
+import hashlib
 import sys
 sys.path.insert(0, '../..')
 from utils.reader import read_line
-import hashlib
 
 secretKey: str = read_line('./04.txt')
 

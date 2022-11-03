@@ -1,9 +1,9 @@
 import sys
 sys.path.insert(0, '../..')
-from utils.reader import read_line
-from utils.grid import Grid
 from utils.coordinate import Coordinate
+from utils.grid import Grid
 from utils.math import is_even, is_odd
+from utils.reader import read_line
 
 instructions: str = read_line('./03.txt')
 
