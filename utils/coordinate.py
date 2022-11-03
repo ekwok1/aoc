@@ -5,16 +5,16 @@ class Coordinate:
   x: int = 0
   y: int = 0
 
-  def moveRight(self) -> "Coordinate":
+  def moveRight(self) -> 'Coordinate':
     return Coordinate(self.x + 1, self.y)
 
-  def moveDown(self) -> "Coordinate":
+  def moveDown(self) -> 'Coordinate':
     return Coordinate(self.x, self.y - 1)
 
-  def moveLeft(self) -> "Coordinate":
+  def moveLeft(self) -> 'Coordinate':
     return Coordinate(self.x - 1, self.y)
 
-  def moveUp(self) -> "Coordinate":
+  def moveUp(self) -> 'Coordinate':
     return Coordinate(self.x, self.y + 1)
 
   def __hash__(self) -> int:

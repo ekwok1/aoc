@@ -3,7 +3,7 @@ sys.path.insert(0, '../..')
 from utils.reader import read_lines
 from utils.math import two_min
 
-gifts: "list[str]" = read_lines('./02.txt')
+gifts: 'list[str]' = read_lines('./02.txt')
 
 ribbon: int = 0
 for gift in gifts:

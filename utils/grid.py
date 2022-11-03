@@ -5,7 +5,7 @@ T = TypeVar('T')
 
 @dataclass
 class Grid(Generic[T]):
-  _visited: "set[T]" = field(default_factory=set)
+  _visited: 'set[T]' = field(default_factory=set)
 
   def size(self) -> int:
     return len(self._visited)
