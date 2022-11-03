@@ -29,3 +29,10 @@ class Matrix(Generic[T]):
         if self._values[row][col] == value:
           count += 1
     return count
+  
+  def sum(self: 'Matrix[int]') -> int:
+    sum: int = 0
+    for row in range(self._height):
+      for col in range(self._width):
+        sum += int(self._values[row][col])
+    return sum

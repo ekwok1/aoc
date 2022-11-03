@@ -4,7 +4,7 @@ from utils.matrix import Matrix
 from utils.reader import read_lines
 from utils.string import parse_ints_from_string
 
-matrix: Matrix[bool] = Matrix(1000, 1000, False)
+matrix: Matrix[int] = Matrix(1000, 1000, 0)
 
 instructions: 'list[str]' = read_lines('./06.txt')
 
@@ -15,10 +15,11 @@ for instruction in instructions:
   for y in range(y1, y2+1):
     for x in range(x1, x2+1):
       if action == 'on':
-        matrix.set(y, x, True)
+        matrix.set(y, x, matrix.get(y, x) + 1)
       elif action == 'off':
-        matrix.set(y, x, False)
+        curr: int = matrix.get(y, x)
+        matrix.set(y, x, curr - 1 if curr > 0 else 0)
       elif action == 'toggle':
-        matrix.set(y, x, not matrix.get(y, x))
+        matrix.set(y, x, matrix.get(y, x) + 2)
 
-print(matrix.count(True))
+print(matrix.sum())
