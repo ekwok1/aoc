@@ -6,7 +6,7 @@ from utils.string import parse_ints_from_string
 
 matrix: Matrix[bool] = Matrix(1000, 1000, False)
 
-instructions: 'list[str]' = read_lines('./06.txt')
+instructions: list[str] = read_lines('./06.txt')
 
 for instruction in instructions:
   action: str = instruction.split()[0]

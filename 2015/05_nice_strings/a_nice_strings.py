@@ -3,9 +3,9 @@ sys.path.insert(0, '../..')
 from utils.reader import read_lines
 from utils.string import is_vowel
 
-strings: 'list[str]' = read_lines('./05.txt')
+strings: list[str] = read_lines('./05.txt')
 
-forbidden: 'set[str]' = set(['ab', 'cd', 'pq', 'xy'])
+forbidden: set[str] = set(['ab', 'cd', 'pq', 'xy'])
 
 def has_forbidden(string: str) -> bool:
   for f in forbidden:
@@ -26,9 +26,9 @@ def has_three_vowels(string: str) -> bool:
       count += 1
   return count >= 3
 
-nice: int = 0
+nice_strings: int = 0
 for string in strings:
   if not has_forbidden(string) and has_repeated_char(string) and has_three_vowels(string):
-    nice += 1
+    nice_strings += 1
 
-print(nice)
+print(nice_strings)
