@@ -5,9 +5,9 @@ from utils.reader import read_lines
 from utils.string import parse_int
 
 instructions: list[str] = read_lines('./07.txt')
-override_signal: list[str] = ['956']
 
 id_inputs_dictionary: dict[str, list[str]] = dict()
+override_signal: list[str] = ['956']
 
 for instruction in instructions:
   signal, identifier = instruction.split(' -> ')

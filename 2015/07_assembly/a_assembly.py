@@ -4,6 +4,7 @@ from functools import cache
 from utils.reader import read_lines
 from utils.string import parse_int
 
+
 instructions: list[str] = read_lines('./07.txt')
 
 id_inputs_dictionary: dict[str, list[str]] = dict()
