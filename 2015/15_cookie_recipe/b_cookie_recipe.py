@@ -11,14 +11,17 @@ def get_best_score(ingredients: list[str], total_ingredients: int) -> int:
   best_score: int = 0
   ingredient_info: dict[str, dict[RecipeStat, int]] = get_ingredient_info(ingredients)
   for recipe in combinations_with_replacement(ingredient_info.keys(), total_ingredients):
-    capacity = durability = flavor = texture = 0
+    capacity = durability = flavor = texture = calories = 0
     for key, group in groupby(recipe):
       count: int = len(list(group))
       capacity += count * ingredient_info[key][RecipeStat.CAPACITY]
       durability += count * ingredient_info[key][RecipeStat.DURABILITY]
       flavor += count * ingredient_info[key][RecipeStat.FLAVOR]
       texture += count * ingredient_info[key][RecipeStat.TEXTURE]
+      calories += count * ingredient_info[key][RecipeStat.CALORIES]
     if capacity < 0 or durability < 0 or flavor < 0 or texture < 0:
+      continue
+    if calories != 500:
       continue
     best_score = max(best_score, capacity * durability * flavor * texture)
   return best_score
