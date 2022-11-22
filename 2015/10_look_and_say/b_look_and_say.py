@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, '../..')
-from itertools import groupby
+from utils.itertools import groupby
 from utils.reader import read_line
 
 initial_sequence: str = read_line('./10.txt')
