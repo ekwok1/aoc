@@ -3,7 +3,7 @@ sys.path.insert(0, '../..')
 from utils.reader import read_line, read_lines
 
 initial_molecule: str = read_line('./19.txt')
-replacements: list[str] = read_lines('./19_replacements.txt')
+replacements: list[str] = read_lines('./19_cfg.txt')
 
 replacement_dict: dict[str, list[str]] = dict()
 max_from_length: int = 0
