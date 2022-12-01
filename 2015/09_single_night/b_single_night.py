@@ -6,4 +6,4 @@ from utils.reader import read_lines
 edges: list[str] = read_lines('./09.txt')
 
 directed_graph: DirectedGraph = DirectedGraph(GraphType.TWO_WAY, EdgeFormat.WEIGHT_LAST, edges)
-print(directed_graph.get_longest_path()
+print(directed_graph.get_longest_path())

@@ -1,9 +1,8 @@
 import sys
 sys.path.insert(0, '../..')
-from utils.reader import read_line
 from utils.string import has_forbidden_characters, has_pairs, has_three_sequence, increment_string
 
-initial_password: str = read_line('./11.txt')
+initial_password: str = 'cqjxjnds'
 
 def get_next_password(password: str) -> str:
   next_password = password

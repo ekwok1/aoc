@@ -4,11 +4,10 @@ from utils.itertools import get_all_combinations
 from utils.reader import read_lines_as_int
 
 sizes: list[int] = read_lines_as_int('./17.txt')
+total_size: int = 150
 
-def count_combinations(total_size: int) -> int:
-  count: int = 0
-  for combination in get_all_combinations(sizes, 1):
-    count = count + 1 if sum(combination) == total_size else count
-  return count
+count: int = 0
+for combination in get_all_combinations(sizes, 1):
+  count = count + 1 if sum(combination) == total_size else count
 
-print(count_combinations(150))
+print(count)

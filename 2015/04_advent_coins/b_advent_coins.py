@@ -1,13 +1,12 @@
-import hashlib
 import sys
 sys.path.insert(0, '../..')
-from utils.reader import read_line
+from utils.hash import md5_encode
 
-secretKey: str = read_line('./04.txt')
+secretKey: str = 'yzbqklnj'
 
 i: int = 0
 while True:
-  hash: str = hashlib.md5((secretKey + str(i)).encode()).hexdigest()
+  hash: str = md5_encode(secretKey + str(i))
   if hash.startswith('000000'):
     break
   else:

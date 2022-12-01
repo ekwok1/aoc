@@ -1,9 +1,8 @@
 import sys
 sys.path.insert(0, '../..')
 from utils.itertools import groupby
-from utils.reader import read_line
 
-initial_sequence: str = read_line('./10.txt')
+initial_sequence: str = '3113322113'
 
 def look_and_say(sequence: str) -> str:
   new_sequence: str = ''
