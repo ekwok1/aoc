@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, '../..')
-from utils.directed_graph import DirectedGraph, EdgeFormat, GraphType
+from data_structures.directed_graph import DirectedGraph, EdgeFormat, GraphType
 from utils.reader import read_lines
 
 edges: list[str] = read_lines('./13.txt')

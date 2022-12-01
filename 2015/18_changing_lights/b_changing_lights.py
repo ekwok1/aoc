@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, '../..')
-from utils.matrix import Matrix
+from data_structures.matrix import Matrix
 from utils.reader import read_lines
 
 matrix_data: list[str] = read_lines('./18.txt')

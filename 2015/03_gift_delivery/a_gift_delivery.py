@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0, '../..')
 from utils.coordinate import Coordinate
-from utils.grid import Grid
+from data_structures.grid import Grid
 from utils.reader import read_line
 
 instructions: str = read_line('./03.txt')
